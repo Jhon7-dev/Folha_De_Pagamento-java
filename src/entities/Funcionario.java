@@ -1,9 +1,14 @@
 package entities;
 
+import java.util.Date;
+
 public abstract class Funcionario {
 		private String primeiroNome;
 		private String segundoNome;
 		private String numeroSeguroSocial;
+		private Date   dataAniversario;
+		
+		
 		
 		public Funcionario() {
 			// TODO Auto-generated constructor stub
@@ -18,9 +23,7 @@ public abstract class Funcionario {
 			this.numeroSeguroSocial = cpf;
 		}
 		
-		
-
-
+	
 		public String getPrimeiroNome() {
 			return primeiroNome;
 		}

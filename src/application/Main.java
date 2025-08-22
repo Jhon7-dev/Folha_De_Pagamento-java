@@ -5,6 +5,7 @@ import entities.ComissaoPlus;
 import entities.Funcionario;
 import entities.FuncionarioAssalariado;
 import entities.FuncionarioPorHora;
+import entities.TrabalhadorPorPeca;
 
 public class Main {
 public static void main(String[] args) {	
@@ -13,6 +14,7 @@ public static void main(String[] args) {
 	 FuncionarioPorHora funcionarioPorHora = new FuncionarioPorHora("Bruna ","Fernanda"," 020.888.777-72 ", 45.00, 6);
 	 ComissaoFuncionario comissaoFuncionario = new ComissaoFuncionario("Ozimar ","De Souza"," 777.900.888-89", 1000.0, .06);
 	 ComissaoPlus comissaoPlus = new ComissaoPlus("Lennon ", "De Souza", " 880.098.747-20", 20.000, 1000.0,.04);
+	 TrabalhadorPorPeca trabalhadorPorPeca = new TrabalhadorPorPeca("Joao ","Lenon","197.907.507-73",1000.0,10);
 	 
 	 
 	 System.out.println("Funcionários Processados Individualmente:\n");
@@ -29,12 +31,13 @@ public static void main(String[] args) {
 	 System.out.println(comissaoPlus);
 	 System.out.println("Ganhos: " + comissaoPlus.ganhos());
 	 
-	 Funcionario [] funcionarios = new Funcionario [4];
+	 Funcionario [] funcionarios = new Funcionario [5];
 	 funcionarios[0] = funcionarioAssalariado;
 	 funcionarios[1] = funcionarioPorHora;
 	 funcionarios[2] = comissaoFuncionario;
 	 funcionarios[3] = comissaoPlus;
-	 
+	 funcionarios[4] = trabalhadorPorPeca;
+ 	 
 	 System.out.println("Funcionários Processados com polimorfismo \n");
 	 
 	 for(Funcionario func : funcionarios) {
