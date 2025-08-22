@@ -22,8 +22,12 @@ public class FuncionarioAssalariado extends Funcionario{
 
 
 
-	public void setSalarioSemanal(double salarioSemanal) {
-		this.salarioSemanal = salarioSemanal;
+	public void setSalarioSemanal(double salario) {
+		if(salario < 0.0) {
+			this.salarioSemanal = 0.0;
+		}else {
+			this.salarioSemanal = salario;
+		}
 	}
 
 
@@ -31,8 +35,16 @@ public class FuncionarioAssalariado extends Funcionario{
 	@Override
 	public double ganhos() {
 		// TODO Auto-generated method stub
-		return 0;
+		return getSalarioSemanal();
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return String.format("Salario do fucionário:%s\n%s: $%,2f", super.toString(),"Salário semanal", getSalarioSemanal());
+	}
+	
 		
 		
 }
