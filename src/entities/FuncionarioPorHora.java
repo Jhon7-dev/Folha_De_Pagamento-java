@@ -9,8 +9,8 @@ public class FuncionarioPorHora  extends Funcionario{
 	}
 	
 	 
-	public FuncionarioPorHora(double remuneracaoPorHora, double horasTrabalhadas) {
-		super();
+	public FuncionarioPorHora(String primeiro,String segundo,String cpf,double remuneracaoPorHora, double horasTrabalhadas) {
+		super(primeiro,segundo,cpf);
 		setRemuneracao(remuneracaoPorHora);
 		setHoras(horasTrabalhadas);
 	}
@@ -56,7 +56,8 @@ public class FuncionarioPorHora  extends Funcionario{
 
 	@Override
 	public String toString() {
-		return String.format("Funcionario por Hora: %sn%s: $%,.2f;%s:%,.2f",super.toString()," Pagamento por hora", getRemuneracao(), "Horas trabalhadas " + getHoras());
-	
+	    return "Funcionário por Hora: " + super.toString() +
+	           "\nPagamento por hora: " + getRemuneracao() +
+	           "\nHoras trabalhadas: " + getHoras();
 	}
 }

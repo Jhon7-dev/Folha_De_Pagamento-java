@@ -6,11 +6,10 @@ public class ComissaoPlus extends ComissaoFuncionario{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ComissaoPlus(double salario) {
-		super();
+	public ComissaoPlus(String primeiro,String segundo,String cpf,double salario,double vendas,double taxas) {
+		super(primeiro,segundo,cpf,vendas,taxas);
 		setSalarioBase(salario);
 	}
-
 	public double getSalarioBase() {
 		return salarioBase;
 	}
@@ -27,8 +26,7 @@ public class ComissaoPlus extends ComissaoFuncionario{
 	}
 	@Override
 	public String toString() {
-		return String.format("%s %s; %s: $%, .2f",
-				"Salário-base ", super.toString(),
-				"Base salary ", getSalarioBase());
+		return  "Salário-base: " + super.toString() +
+		           "\nSalario Base: " + getSalarioBase();
 	}
 }

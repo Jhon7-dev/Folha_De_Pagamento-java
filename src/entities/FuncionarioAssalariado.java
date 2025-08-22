@@ -9,9 +9,9 @@ public class FuncionarioAssalariado extends Funcionario{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public FuncionarioAssalariado(double salarioSemanal) {
-		super();
-		this.salarioSemanal = salarioSemanal;
+	public FuncionarioAssalariado(String primeiro,String segundo,String cpf,double salario ) {
+		super(primeiro,segundo,cpf);
+		setSalarioSemanal(salario);
 	}
 
 
@@ -34,17 +34,18 @@ public class FuncionarioAssalariado extends Funcionario{
 
 	@Override
 	public double ganhos() {
-		// TODO Auto-generated method stub
+
 		return getSalarioSemanal();
 	}
 	
-	
-
 	@Override
 	public String toString() {
-		return String.format("Salario do fucionário:%s\n%s: $%,2f", super.toString(),"Salário semanal", getSalarioSemanal());
+		  return "Funcionário Assalariado: " + super.toString() +
+		           "\nSalário semanal: " + getSalarioSemanal();
+		}
+
 	}
 	
 		
 		
-}
+ 

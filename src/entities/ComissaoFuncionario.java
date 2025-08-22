@@ -8,24 +8,24 @@ package entities;
 	// TODO Auto-generated constructor stub
     }
    
-	public ComissaoFuncionario(double vendas, double taxa) {
-	super();
+   public ComissaoFuncionario(String primeiro,String segundo,String cpf,double vendas, double taxa) {
+	super(primeiro,segundo,cpf);
 	setTaxaDeComissao(taxa);
 	setVendasBrutas(vendas);
 }
-    
 	public double getVendasBrutas() {
 		return vendasBrutas;
 	}
-
 	public void setVendasBrutas(double vendas ) {
-		this.vendasBrutas = vendasBrutas;
+		if(vendas< 0.0) {
+			vendasBrutas = 0.0;
+		}else {
+			vendasBrutas = vendas;
+		}
 	}
-
 	public double getTaxaDeComissao() {
 		return taxaDeComissao;
 	}
-
 	public void setTaxaDeComissao(double taxa ) {
 		if(taxa > 0.0 && taxa < 1.0) {
 			taxaDeComissao = 0.0;
@@ -33,7 +33,6 @@ package entities;
 			taxaDeComissao = taxa;
 		}
 	}
-
 	@Override
 	public double ganhos() {
 		// TODO Auto-generated method stub
@@ -41,12 +40,8 @@ package entities;
 	}
 	@Override
 	public String toString() {
-		
-		return String.format("%s:,%s\n%s:$%,.2f; %s: %.2f",
-				"Comissão do Funcionário", super.toString(),
-				"Vendas Brutas ", getVendasBrutas(),
-				 "Taxa de Comissão ", getTaxaDeComissao());
-		
+		return "Comissão do Funcionário: " + super.toString() +
+				"\nVendas Brutas: " + getVendasBrutas() + 
+				"\nTaxa de Comissão: " + getTaxaDeComissao();
 	}
-
    }

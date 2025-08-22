@@ -1,47 +1,59 @@
 package entities;
 
 public abstract class Funcionario {
-		private String nome;
-		private String sobreNome;
+		private String primeiroNome;
+		private String segundoNome;
 		private String numeroSeguroSocial;
 		
 		public Funcionario() {
 			// TODO Auto-generated constructor stub
 		}
-
-		public Funcionario(String nome, String sobreNome, String numeroSeguroSocial) {
-		    
-			this.nome = nome;
-			this.sobreNome = sobreNome;
-			this.numeroSeguroSocial = numeroSeguroSocial;
+        
+		
+		  
+		public Funcionario(String primeiro, String segundo, String cpf) {
+			super();
+			this.primeiroNome = primeiro;
+			this.segundoNome = segundo;
+			this.numeroSeguroSocial = cpf;
 		}
 		
-		public String getNome() {
-			return nome;
+		
+
+
+		public String getPrimeiroNome() {
+			return primeiroNome;
 		}
 
-		public void setNome(String nome) {
-			this.nome = nome;
+
+
+		public void setPrimeiroNome(String primeiro) {
+			this.primeiroNome = primeiro;
 		}
 
-		public String getSobreNome() {
-			return sobreNome;
+
+
+		public String getSegundoNome() {
+			return segundoNome;
 		}
 
-		public void setSobreNome(String sobreNome) {
-			this.sobreNome = sobreNome;
+
+
+		public void setSegundoNome(String segundo) {
+			this.segundoNome = segundo;
 		}
 
 		public String getNumeroSeguroSocial() {
 			return numeroSeguroSocial;
 		}
 
-		public void setNumeroSeguroSocial(String numeroSeguroSocial) {
-			this.numeroSeguroSocial = numeroSeguroSocial;
+		public void setNumeroSeguroSocial(String cpf) {
+			this.numeroSeguroSocial = cpf;
 		}
 		
 		public String toString() {
-			return (getNome() + getSobreNome() + getNumeroSeguroSocial());
+			return "" + getPrimeiroNome() + " " + getSegundoNome() + 
+			           "\nNúmero do Seguro Social: " + getNumeroSeguroSocial();
 		}
 		public abstract double ganhos();
 }
